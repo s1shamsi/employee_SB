@@ -7,6 +7,8 @@ import com.codeline.sampleProject.Repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class AccountService {
 
@@ -15,6 +17,9 @@ AccountRepository AccountRepository;
 
     public void saveAccount(Account account) {
         AccountRepository.save(account);
+    }
+    public List<Account> getAccount() {
+        return AccountRepository.findAll();
     }
 
 }
